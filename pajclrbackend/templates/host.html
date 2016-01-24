@@ -3,6 +3,7 @@
 <title>hi</title>
 </head>
 <body>
+    <button onclick="skip()">Skip</button>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
 <script type="text/javascript">
 var socket = io('ws://localhost:8000/host');
@@ -10,6 +11,10 @@ var socket = io('ws://localhost:8000/host');
 socket.on('chat message', function() {
     console.log('asdasd');
 });
+
+function skip() {
+    socket.emit('skip');
+}
 </script>
 </body>
 </html>
